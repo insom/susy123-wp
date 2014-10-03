@@ -1,0 +1,10 @@
+404.php             wp-content/themes/susy123/404.php
+content-none.php    wp-content/themes/susy123/content-none.php
+content.php         wp-content/themes/susy123/content.php
+footer.php          wp-content/themes/susy123/footer.php
+functions.php       wp-content/themes/susy123/functions.php
+header.php          wp-content/themes/susy123/header.php
+index.php           wp-content/themes/susy123/index.php
+screenshot.png      wp-content/themes/susy123/screenshot.png
+style.css           wp-content/themes/susy123/style.css
+@shell              compass compile

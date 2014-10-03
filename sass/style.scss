@@ -1,0 +1,110 @@
+/*
+Theme Name: susy123
+Theme URI: http://github.com/insom/susy123-wp
+Author: Aaron Brady
+Author URI: http://insom.me.uk/
+Description: Susy One Two Three
+Version: 0.1
+License: CC-BY-NC 3.0
+License URI: http://creativecommons.org/licenses/by-nc/3.0/
+Text Domain: susy123
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Cardo:400,400italic);
+@import url(http://fonts.googleapis.com/css?family=Merriweather);
+
+@import "susy";
+@import "compass/reset";
+
+
+$base-font-size: 20px;
+$base-line-height: 36px;
+$grid-background-baseline-height: $base-line-height;
+$rhythm-unit: "px";
+
+@import "compass/typography/vertical_rhythm";
+
+$small: 4;
+$medium: 6;
+$large: 10;
+
+$total-columns: $small;
+$column-width: 4rem;
+$gutter-width: 1rem;
+$grid-padding: $gutter-width / 2;
+$container-style: magic;
+
+@include establish-baseline();
+
+body {
+  // @include debug-vertical-alignment;
+  background-opacity: 0.1;
+  background-color: #333;
+  color: #ddd;
+}
+a { color: #55f; }
+html {
+  @include adjust-leading-to(1);
+  font-family: Merriweather;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.container {
+  overflow: hidden;
+  @include container($small, $medium, $large);
+  // @include susy-grid-background;
+  @include at-breakpoint($medium) {
+    // @include susy-grid-background;
+  }
+  @include at-breakpoint($large) {
+    // @include susy-grid-background;
+  }
+}
+
+$small-main-column: 4;
+$medium-main-column: 5;
+$large-main-column: 6;
+
+header, div.content { 
+  width: columns($small-main-column);
+  // text-align: justify;
+  @include at-breakpoint($medium) {
+    width: columns($medium-main-column, $medium);
+  }
+  @include at-breakpoint($large) {
+    width: columns($large-main-column, $large);
+    @include prefix(2, $large);
+  }
+}
+blockquote {
+  @include at-breakpoint($medium) {
+    @include pull(1, $medium-main-column, right);
+    @include prefix(0.5, $medium-main-column);
+    padding-bottom: rhythm(1);
+    width: columns(2, $medium-main-column);
+    float: right;
+    clear: right;
+  }
+  @include at-breakpoint($large) {
+    @include pull(1.5, $large-main-column, right);
+    @include prefix(0.5, $large-main-column);
+    width: columns(3, $large-main-column);
+  }
+  font-family: Cardo;
+  font-weight: 400;
+  font-style: italic;
+}
+a { text-decoration: none }
+h1 { @include adjust-font-size-to(36px, 2); }
+h2 {
+  @include adjust-font-size-to(20px);
+  margin-top: rhythm(2);
+  @include at-breakpoint($large) {
+    @include pull(1, $large-main-column);
+  }
+}
+p {
+  @include adjust-font-size-to(20px);
+  margin-top: rhythm(1);
+}
