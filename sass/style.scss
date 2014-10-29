@@ -24,11 +24,9 @@ $rhythm-unit: "px";
 
 @import "compass/typography/vertical_rhythm";
 
-$small: 4;
-$medium: 6;
 $large: 10;
 
-$total-columns: $small;
+$total-columns: $large;
 $column-width: 4rem;
 $gutter-width: 1rem;
 $grid-padding: $gutter-width / 2;
@@ -52,45 +50,22 @@ html {
 
 .container {
   overflow: hidden;
-  @include container($small, $medium, $large);
+  @include container($large);
   @include susy-grid-background;
-  @include at-breakpoint($medium) {
-    @include susy-grid-background;
-  }
-  @include at-breakpoint($large) {
-    @include susy-grid-background;
-  }
 }
 
-$small-main-column: 4;
-$medium-main-column: 5;
 $large-main-column: 6;
 
 header, div.content { 
-  width: columns($small-main-column);
-  // text-align: justify;
-  @include at-breakpoint($medium) {
-    width: columns($medium-main-column, $medium);
-  }
-  @include at-breakpoint($large) {
-    width: columns($large-main-column, $large);
-    @include prefix(2, $large);
-  }
+  width: columns($large-main-column, $large);
+  @include prefix(2, $large);
 }
 blockquote {
-  @include at-breakpoint($medium) {
-    @include pull(1, $medium-main-column, right);
-    @include prefix(0.5, $medium-main-column);
-    padding-bottom: rhythm(1);
-    width: columns(2, $medium-main-column);
-    float: right;
-    clear: right;
-  }
-  @include at-breakpoint($large) {
-    @include pull(1.5, $large-main-column, right);
-    @include prefix(0.5, $large-main-column);
-    width: columns(3, $large-main-column);
-  }
+  @include pull(1.5, $large-main-column, right);
+  @include prefix(0.5, $large-main-column);
+  width: columns(3, $large-main-column);
+  float: right;
+  clear: right;
   font-family: Cardo;
   font-weight: 400;
   font-style: italic;
@@ -100,9 +75,7 @@ h1 { @include adjust-font-size-to(36px, 2); }
 h2 {
   @include adjust-font-size-to(20px);
   margin-top: rhythm(2);
-  @include at-breakpoint($large) {
-    @include pull(1, $large-main-column);
-  }
+  @include pull(1, $large-main-column);
 }
 p {
   @include adjust-font-size-to(20px);
