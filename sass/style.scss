@@ -16,14 +16,6 @@ Text Domain: susy123
 @import "susy";
 @import "compass/reset";
 
-
-$base-font-size: 20px;
-$base-line-height: 36px;
-$grid-background-baseline-height: $base-line-height;
-$rhythm-unit: "px";
-
-@import "compass/typography/vertical_rhythm";
-
 $large: 10;
 
 $total-columns: $large;
@@ -32,14 +24,10 @@ $gutter-width: 1rem;
 $grid-padding: $gutter-width / 2;
 $container-style: magic;
 
-@include establish-baseline();
-
 body {
-   @include debug-vertical-alignment;
   background-opacity: 0.1;
 }
 html {
-  @include adjust-leading-to(1);
   font-family: Merriweather;
   font-weight: 400;
   font-size: 20px;
@@ -71,10 +59,10 @@ a { text-decoration: none }
 h1 { @include adjust-font-size-to(36px, 2); }
 h2 {
   @include adjust-font-size-to(20px);
-  margin-top: rhythm(2);
+  margin-top: 40px;
   @include pull(1, $large-main-column);
 }
 p {
   @include adjust-font-size-to(20px);
-  margin-top: rhythm(1);
+  margin-top: 20px;
 }
