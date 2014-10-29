@@ -53,12 +53,12 @@ html {
 .container {
   overflow: hidden;
   @include container($small, $medium, $large);
-  // @include susy-grid-background;
+  @include susy-grid-background;
   @include at-breakpoint($medium) {
-    // @include susy-grid-background;
+    @include susy-grid-background;
   }
   @include at-breakpoint($large) {
-    // @include susy-grid-background;
+    @include susy-grid-background;
   }
 }
 
