@@ -16,39 +16,15 @@ Text Domain: susy123
 @import "susy";
 @import "compass/reset";
 
-$large: 10;
-
-$total-columns: $large;
-$column-width: 4rem;
-$gutter-width: 1rem;
-$grid-padding: $gutter-width / 2;
-$container-style: magic;
-
-body {
-  background-opacity: 0.1;
-}
 html {
   font-family: Merriweather;
   font-weight: 400;
   font-size: 20px;
 }
-
 .container {
   overflow: hidden;
-  @include container($large);
-  @include susy-grid-background;
-}
-
-$large-main-column: 6;
-
-header, div.content { 
-  width: columns($large-main-column, $large);
-  @include prefix(2, $large);
 }
 blockquote {
-  @include pull(1.5, $large-main-column, right);
-  @include prefix(0.5, $large-main-column);
-  width: columns(3, $large-main-column);
   float: right;
   clear: right;
   font-family: Cardo;
@@ -60,7 +36,6 @@ h1 { @include adjust-font-size-to(36px, 2); }
 h2 {
   @include adjust-font-size-to(20px);
   margin-top: 40px;
-  @include pull(1, $large-main-column);
 }
 p {
   @include adjust-font-size-to(20px);
